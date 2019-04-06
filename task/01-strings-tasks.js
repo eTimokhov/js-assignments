@@ -203,10 +203,10 @@ function extractEmails(str) {
  *
  */
 function getRectangleString(width, height) {
-    var topBottomSide = "─".repeat(width - 2);
-    var middle = ("│" + " ".repeat(width - 2) + "│" + "\n").repeat(height - 2);
-    var top = "┌" + topBottomSide + "┐" + "\n";
-    var bottom = "└" + topBottomSide + "┘" + "\n";
+    let topBottomSide = "─".repeat(width - 2);
+    let middle = ("│" + " ".repeat(width - 2) + "│" + "\n").repeat(height - 2);
+    let top = "┌" + topBottomSide + "┐" + "\n";
+    let bottom = "└" + topBottomSide + "┘" + "\n";
     return top + middle + bottom;
 }
 
@@ -227,9 +227,9 @@ function getRectangleString(width, height) {
  *
  */
 function encodeToRot13(str) {
-    var result = "";
+    let result = "";
     for (let i = 0; i < str.length; i++) {
-        var char = str[i];
+        let char = str[i];
         if (/[A-Za-z]/.test(char))
             result += String.fromCharCode(char.charCodeAt(0) + (char.toUpperCase() <= "M" ? 13 : -13));
         else
@@ -281,8 +281,8 @@ function isString(value) {
  *   'K♠' => 51
  */
 function getCardId(value) {
-    var cardValues = ['A','2','3','4','5','6','7','8','9','10','J','Q','K'];
-    var id = 0;
+    let cardValues = ['A','2','3','4','5','6','7','8','9','10','J','Q','K'];
+    let id = 0;
     switch (value.slice(-1)) {
         case "♦":
             id += 13;    
